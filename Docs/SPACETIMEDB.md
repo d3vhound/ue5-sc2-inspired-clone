@@ -2,6 +2,8 @@
 
 Aetherfront pins the Rust module crate and the official Unreal client SDK to **SpacetimeDB 2.7.1**. SpacetimeDB is the authoritative durable shard, not a cache behind Unreal replication.
 
+The Aetherfront client targets Unreal Engine 5.8. The upstream SpacetimeDB Unreal tutorial currently documents 5.6 as its tested engine version, while the source plugin itself has no engine-version lock. Therefore 5.8 is an Aetherfront compatibility target: every SDK update must pass a native UE5.8 build before it is accepted.
+
 ## Source layout
 
 | Path | Purpose |

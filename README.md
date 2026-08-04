@@ -1,6 +1,6 @@
 # Aetherfront
 
-Aetherfront is an original Unreal Engine 5.6 persistent online real-time strategy game prototype. The long-term goal is a seamless generated frontier where commanders can join at any time, establish durable settlements, coordinate or compete, and grow bases beyond conventional match-sized RTS limits.
+Aetherfront is an original Unreal Engine 5.8 persistent online real-time strategy game prototype. The long-term goal is a seamless generated frontier where commanders can join at any time, establish durable settlements, coordinate or compete, and grow bases beyond conventional match-sized RTS limits.
 
 The project studies the responsiveness and information design of excellent RTS games through documented, black-box AI/ML research. It does **not** contain or redistribute StarCraft II binaries, source, models, textures, animation, audio, maps, names, or other Blizzard content. Aetherfront is not affiliated with or endorsed by Blizzard Entertainment.
 
@@ -8,7 +8,7 @@ The project studies the responsiveness and information design of excellent RTS g
 
 The current code-only checkpoint intentionally depends on no third-party art and includes:
 
-- Unreal Engine 5.6 game, editor, and dedicated-server targets
+- Unreal Engine 5.8 game, editor, and dedicated-server targets
 - server-owned game mode and replicated world director
 - RTS camera with WASD pan, wheel zoom, and Q/E rotation
 - click and drag selection with local ownership feedback
@@ -20,12 +20,12 @@ The current code-only checkpoint intentionally depends on no third-party art and
 - a transactional 20 Hz SpacetimeDB movement and construction simulation
 - an Unreal GameInstance subsystem that reconnects with a saved identity token and subscribes to authoritative shard state
 - versioned JSON snapshots retained only as an offline/local fallback
-- PCG, Mass Entity, Python editor scripting, and dedicated-server capabilities enabled for scale work
+- PCG, Python editor scripting, and dedicated-server capabilities enabled for scale work; Mass stays disabled until its projection checkpoint has real code
 - Blender generation and Unreal import scripts for an original rigged Fabricator and static structures
 
 ## Open and run
 
-1. Install Unreal Engine 5.6 with C++ toolchain support and the SpacetimeDB 2.7.1 CLI.
+1. Install Unreal Engine 5.8 with C++ toolchain support and the SpacetimeDB 2.7.1 CLI.
 2. Clone this repository.
 3. Run `./Tools/SpacetimeDB/bootstrap.sh` on macOS/Linux or `./Tools/SpacetimeDB/bootstrap.ps1` in PowerShell. This fetches the official SDK pinned at `v2.7.1`, builds the Rust module, and generates Unreal bindings.
 4. In one terminal, run `spacetime start`.

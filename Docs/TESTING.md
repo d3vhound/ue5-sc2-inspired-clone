@@ -28,7 +28,7 @@ Expected initial state is one `world_config` row, one repeating private simulati
 
 1. Complete the backend smoke test above.
 2. Generate project files and build the `AetherfrontEditor` Development target.
-3. Open the project in Unreal Engine 5.6.
+3. Open the project in Unreal Engine 5.8.
 4. Press Play and confirm the log reports `persistent shard is ready`.
 5. Stop and restart PIE; confirm the same identity token reconnects.
 6. Inspect `commander`, `building`, and `unit` with `spacetime sql` and confirm the starter state remains durable.
@@ -81,4 +81,4 @@ This is an offline/fallback topology, not the production source of truth.
 
 ## Current verification boundary
 
-This workspace does not contain Unreal Editor, Blender, Rust, or the SpacetimeDB CLI. Source, configuration, scripts, JSON, Python, and repository hygiene can be checked here, but a successful SpacetimeDB module build, generated-binding pass, UE5.6 compile, and editor smoke test are required before this checkpoint is called runtime-verified.
+This workspace does not contain Unreal Editor, Blender, Rust, or the SpacetimeDB CLI. Source, configuration, scripts, JSON, Python, and repository hygiene can be checked here, but a successful SpacetimeDB module build, generated-binding pass, UE5.8 compile, and editor smoke test are required before this checkpoint is called runtime-verified.
