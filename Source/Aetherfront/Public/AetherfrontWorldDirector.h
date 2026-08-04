@@ -19,12 +19,15 @@ class AETHERFRONT_API AAetherfrontWorldDirector final : public AActor
 public:
     AAetherfrontWorldDirector();
 
+    virtual void BeginPlay() override;
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
     UFUNCTION(BlueprintPure, Category = "World")
     int32 GetWorldSeed() const { return WorldSeed; }
 
 private:
+    void GenerateResources();
+
     UPROPERTY(VisibleAnywhere, Category = "World")
     TObjectPtr<USceneComponent> SceneRoot;
 
@@ -46,4 +49,3 @@ private:
     UPROPERTY(EditAnywhere, Replicated, Category = "World")
     int32 WorldSeed = 20260804;
 };
-

@@ -8,7 +8,9 @@
 AAetherfrontCameraPawn::AAetherfrontCameraPawn()
 {
     PrimaryActorTick.bCanEverTick = true;
-    bReplicates = false;
+    bReplicates = true;
+    bOnlyRelevantToOwner = true;
+    SetReplicateMovement(false);
 
     CollisionRoot = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionRoot"));
     CollisionRoot->InitSphereRadius(32.0f);
@@ -92,4 +94,3 @@ void AAetherfrontCameraPawn::RotateRight()
 {
     AddActorWorldRotation(FRotator(0.0f, RotationStepDegrees, 0.0f));
 }
-
