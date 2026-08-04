@@ -17,7 +17,8 @@ public class Aetherfront : ModuleRules
             "NavigationSystem",
             "NetCore",
             "Json",
-            "JsonUtilities"
+            "JsonUtilities",
+            "SpacetimeDbSdk"
         });
 
         PrivateDependencyModuleNames.AddRange(new[]
@@ -27,4 +28,3 @@ public class Aetherfront : ModuleRules
         });
     }
 }
-

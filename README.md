@@ -16,17 +16,28 @@ The current code-only checkpoint intentionally depends on no third-party art and
 - replicated Alloy/Flux economy and server-validated Relay construction
 - Citadel, Fabricator, Warden, Relay, and resource-node blockouts made from Engine-native shapes
 - deterministic resource scattering across a 20 km blockout surface
-- versioned, atomically replaced JSON snapshots for persistent structures
+- a pinned SpacetimeDB 2.7.1 Rust module for persistent identity, economy, structures, units, cells, orders, and command receipts
+- a transactional 20 Hz SpacetimeDB movement and construction simulation
+- an Unreal GameInstance subsystem that reconnects with a saved identity token and subscribes to authoritative shard state
+- versioned JSON snapshots retained only as an offline/local fallback
 - PCG, Mass Entity, Python editor scripting, and dedicated-server capabilities enabled for scale work
 - Blender generation and Unreal import scripts for an original rigged Fabricator and static structures
 
 ## Open and run
 
-1. Install Unreal Engine 5.6 with C++ toolchain support.
+1. Install Unreal Engine 5.6 with C++ toolchain support and the SpacetimeDB 2.7.1 CLI.
 2. Clone this repository.
-3. Right-click `Aetherfront.uproject` and generate project files.
-4. Build the `AetherfrontEditor` Development target.
-5. Open `Aetherfront.uproject` and press Play.
+3. Run `./Tools/SpacetimeDB/bootstrap.sh` on macOS/Linux or `./Tools/SpacetimeDB/bootstrap.ps1` in PowerShell. This fetches the official SDK pinned at `v2.7.1`, builds the Rust module, and generates Unreal bindings.
+4. In one terminal, run `spacetime start`.
+5. In another terminal, publish the local shard:
+
+   ```bash
+   spacetime publish aetherfront-dev --server local --module-path ./spacetimedb --yes
+   ```
+
+6. Right-click `Aetherfront.uproject` and generate project files.
+7. Build the `AetherfrontEditor` Development target.
+8. Open `Aetherfront.uproject` and press Play.
 
 The project currently uses `/Engine/Maps/Entry` so it can boot without a binary `.umap`. The authoritative game mode creates the presentation world at runtime. A generated World Partition map replaces this in the next content checkpoint.
 
@@ -45,7 +56,7 @@ The project currently uses `/Engine/Maps/Entry` so it can boot without a binary 
 
 ## Architecture
 
-See [Docs/ARCHITECTURE.md](Docs/ARCHITECTURE.md) for the server, simulation, rendering, persistence, procedural-world, and entity strategy. The [asset pipeline](Docs/ASSET_PIPELINE.md), [testing guide](Docs/TESTING.md), and [clean-room research boundary](Docs/CLEAN_ROOM_RESEARCH.md) cover the corresponding workflows.
+See [Docs/ARCHITECTURE.md](Docs/ARCHITECTURE.md) for the simulation, rendering, persistence, procedural-world, and entity strategy. The [SpacetimeDB guide](Docs/SPACETIMEDB.md), [asset pipeline](Docs/ASSET_PIPELINE.md), [testing guide](Docs/TESTING.md), and [clean-room research boundary](Docs/CLEAN_ROOM_RESEARCH.md) cover the corresponding workflows.
 
 ## Status
 

@@ -1,0 +1,30 @@
+name: SpacetimeDB module
+
+on:
+  push:
+    paths:
+      - "spacetimedb/**"
+      - ".github/workflows/spacetimedb.yml"
+  pull_request:
+    paths:
+      - "spacetimedb/**"
+      - ".github/workflows/spacetimedb.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned SpacetimeDB CLI
+        shell: bash
+        run: |
+          curl -sSf https://install.spacetimedb.com | sh -s -- --yes
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/spacetime" version install 2.7.1 --use --yes
+      - name: Build Rust module
+        working-directory: spacetimedb
+        run: spacetime build

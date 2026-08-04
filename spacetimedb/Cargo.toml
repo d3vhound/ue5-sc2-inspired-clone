@@ -1,0 +1,11 @@
+[package]
+name = "aetherfront-spacetime"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+log = "0.4"
+spacetimedb = "=2.7.1"

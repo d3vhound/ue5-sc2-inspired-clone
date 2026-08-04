@@ -30,6 +30,11 @@ Engine/DerivedDataCache/
 Tools/Blender/output/
 Tools/Blender/*.blend1
 
+# SpacetimeDB local SDK, compiler output, and credentials
+Plugins/SpacetimeDbSdk/
+spacetimedb/target/
+.spacetime_aetherfront*
+
 # Keep authored Unreal assets and source files
 !Content/**
 !Config/**

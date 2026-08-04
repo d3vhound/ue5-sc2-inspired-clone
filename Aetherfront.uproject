@@ -28,6 +28,10 @@
       "Enabled": true
     },
     {
+      "Name": "SpacetimeDbSdk",
+      "Enabled": true
+    },
+    {
       "Name": "PythonScriptPlugin",
       "Enabled": true,
       "TargetAllowList": [
