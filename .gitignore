@@ -1,0 +1,35 @@
+# Unreal generated state
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.vscode/
+.idea/
+
+# Generated IDE files
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.code-workspace
+
+# Local platform and build output
+*.log
+*.tmp
+*.user
+*.opensdf
+Engine/DerivedDataCache/
+
+# Blender scratch and exported intermediates
+Tools/Blender/output/
+Tools/Blender/*.blend1
+
+# Keep authored Unreal assets and source files
+!Content/**
+!Config/**
+!Source/**
+
