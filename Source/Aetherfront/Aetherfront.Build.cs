@@ -9,6 +9,7 @@ public class Aetherfront : ModuleRules
         PublicDependencyModuleNames.AddRange(new[]
         {
             "Core",
+            "CoreOnline",
             "CoreUObject",
             "Engine",
             "InputCore",
