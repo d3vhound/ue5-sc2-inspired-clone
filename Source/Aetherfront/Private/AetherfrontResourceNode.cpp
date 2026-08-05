@@ -12,7 +12,7 @@ AAetherfrontResourceNode::AAetherfrontResourceNode()
     PrimaryActorTick.bCanEverTick = false;
     bReplicates = true;
     SetReplicateMovement(false);
-    NetCullDistanceSquared = FMath::Square(140000.0f);
+    SetNetCullDistanceSquared(FMath::Square(140000.0f));
 
     CollisionRoot = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionRoot"));
     CollisionRoot->InitSphereRadius(125.0f);

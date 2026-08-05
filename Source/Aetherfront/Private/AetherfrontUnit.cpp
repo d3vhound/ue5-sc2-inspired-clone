@@ -12,9 +12,9 @@ AAetherfrontUnit::AAetherfrontUnit()
     PrimaryActorTick.bCanEverTick = true;
     bReplicates = true;
     SetReplicateMovement(true);
-    NetUpdateFrequency = 15.0f;
-    MinNetUpdateFrequency = 5.0f;
-    NetCullDistanceSquared = FMath::Square(160000.0f);
+    SetNetUpdateFrequency(15.0f);
+    SetMinNetUpdateFrequency(5.0f);
+    SetNetCullDistanceSquared(FMath::Square(160000.0f));
 
     CollisionRoot = CreateDefaultSubobject<USphereComponent>(TEXT("CollisionRoot"));
     CollisionRoot->InitSphereRadius(52.0f);

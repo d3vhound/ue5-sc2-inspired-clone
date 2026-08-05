@@ -12,7 +12,7 @@
 #include "Engine/GameInstance.h"
 #include "Kismet/GameplayStatics.h"
 #include "EngineUtils.h"
-#include "OnlineReplStructs.h"
+#include "GameFramework/OnlineReplStructs.h"
 #include "TimerManager.h"
 
 AAetherfrontGameMode::AAetherfrontGameMode()

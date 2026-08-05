@@ -12,8 +12,8 @@ AAetherfrontBuilding::AAetherfrontBuilding()
     PrimaryActorTick.bCanEverTick = true;
     bReplicates = true;
     SetReplicateMovement(true);
-    NetUpdateFrequency = 5.0f;
-    NetCullDistanceSquared = FMath::Square(240000.0f);
+    SetNetUpdateFrequency(5.0f);
+    SetNetCullDistanceSquared(FMath::Square(240000.0f));
 
     CollisionRoot = CreateDefaultSubobject<UBoxComponent>(TEXT("CollisionRoot"));
     CollisionRoot->SetBoxExtent(FVector(140.0f, 140.0f, 100.0f));

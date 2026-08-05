@@ -4,7 +4,7 @@
 
 AAetherfrontPlayerState::AAetherfrontPlayerState()
 {
-    NetUpdateFrequency = 4.0f;
+    SetNetUpdateFrequency(4.0f);
 }
 
 void AAetherfrontPlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
